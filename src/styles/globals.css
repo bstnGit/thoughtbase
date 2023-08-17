@@ -48,31 +48,59 @@
       --ring: 240 4.9% 83.9%;
     }
   }
-  
-  @layer base {
-    * {
-      @apply border-border;
-    }
-    body {
-      @apply bg-background text-foreground;
-      font-feature-settings: "rlig" 1, "calt" 1;
-    }
+
+h1{
+  font-size: 32px;
+}
+
+h2{
+  font-size: 24px;
+}
+
+h3{
+  font-size: 18px;
+}
+
+p{
+  font-size: 14px;
+}
+
+.link {
+  font-size: 14px;
+}
+
+.link:hover{
+  text-decoration: underline;
+}
+
+.description{
+  font-size: 12px;
+}
+
+@layer base {
+  * {
+    @apply border-border;
   }
-  
-  @layer utilities {
-    .step {
-      counter-increment: step;
-    }
-  
-    .step:before {
-      @apply absolute w-9 h-9 bg-muted rounded-full font-mono font-medium text-center text-base inline-flex items-center justify-center -indent-px border-4 border-background;
-      @apply ml-[-50px] mt-[-4px];
-      content: counter(step);
-    }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
-  
-  @media (max-width: 640px) {
-    .container {
-      @apply px-4;
-    }
+}
+
+@layer utilities {
+  .step {
+    counter-increment: step;
   }
+
+  .step:before {
+    @apply absolute w-9 h-9 bg-muted rounded-full font-mono font-medium text-center text-base inline-flex items-center justify-center -indent-px border-4 border-background;
+    @apply ml-[-50px] mt-[-4px];
+    content: counter(step);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+}

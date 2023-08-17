@@ -1,7 +1,7 @@
 import { type AppType } from "next/app";
 import { api } from "../utils/api";
 import "../styles/globals.css";
-import { ThemeProvider } from "../components/ui/themeprovider";  // Import the ThemeProvider component
+import { ThemeProvider } from "../ui/components/themeprovider";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
