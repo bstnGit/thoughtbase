@@ -1,7 +1,6 @@
 import * as React from "react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
- 
 import { Button } from "./button"
 import {
   DropdownMenu,
@@ -9,10 +8,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./dropdown-menu"
- 
+import { DropdownMenuSeparator } from "@radix-ui/react-dropdown-menu"
+
 export function ModeToggle() {
   const { setTheme } = useTheme()
- 
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -29,6 +29,9 @@ export function ModeToggle() {
         <DropdownMenuItem onClick={() => setTheme("dark")}>
           Dark
         </DropdownMenuItem>
+
+        <DropdownMenuSeparator/>
+
         <DropdownMenuItem onClick={() => setTheme("system")}>
           System
         </DropdownMenuItem>
