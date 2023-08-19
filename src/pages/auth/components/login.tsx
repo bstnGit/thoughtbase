@@ -65,15 +65,4 @@ const LoginComponent = () => {
   );
 };
 
-export async function getStaticProps({ locale }: { locale: string }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, [
-        'common',
-        'auth',
-      ])),
-    },
-  };
-}
-
 export default LoginComponent;
