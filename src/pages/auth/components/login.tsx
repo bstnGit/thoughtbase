@@ -5,22 +5,14 @@ import { Button } from "../../../components/ui/button";
 import { Icons } from "../../../components/icons"
 import { Separator } from "../../../components/ui/separator"
 import { Input } from "../../../components/ui/input";
-import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const LoginComponent = () => {
-  const { t: translate } = useTranslation("auth");
 
   return (
     <Card className="w-80 md:w-96 bg-card rounded-lg shadow-lg">
       <CardHeader>
         <CardTitle>Login</CardTitle>
-        <CardDescription>
-          { translate('login-card-description') }
-          <Link href="register" className="text-primary hover:underline">
-            Register
-          </Link>
-        </CardDescription>
       </CardHeader>
 
       <CardContent>

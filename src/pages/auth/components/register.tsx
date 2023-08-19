@@ -11,12 +11,6 @@ const RegisterComponent = () => {
     <Card className="w-80 md:w-96 bg-card rounded-lg shadow-lg">
       <CardHeader>
         <CardTitle>Register</CardTitle>
-        <CardDescription>
-          Already have an account?{' '}
-          <Link href="login" className="text-primary hover:underline">
-            Login
-          </Link>
-        </CardDescription>
       </CardHeader>
 
       <CardContent>
