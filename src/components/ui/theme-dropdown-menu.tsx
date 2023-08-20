@@ -10,7 +10,7 @@ import {
 } from "./dropdown-menu"
 import { DropdownMenuSeparator } from "@radix-ui/react-dropdown-menu"
 
-export function ModeToggle() {
+export function ThemeDropDown() {
   const { setTheme } = useTheme()
 
   return (

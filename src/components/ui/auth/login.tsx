@@ -5,7 +5,6 @@ import { Button } from "../../../components/ui/button";
 import { Icons } from "../../../components/icons"
 import { Separator } from "../../../components/ui/separator"
 import { Input } from "../../../components/ui/input";
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const LoginComponent = () => {
 
@@ -53,8 +52,8 @@ const LoginComponent = () => {
           By clicking continue, you agree to our{' '}
           <Link href="../legal/terms-of-service" className="underline underline-offset-4 hover:text-primary">
             Terms of Service
-          </Link>{' '}
-          and{' '}
+          </Link>
+          {' '}and{' '}
           <Link href="../legal/privacy-policy" className="underline underline-offset-4 hover:text-primary">
             Privacy Policy
           </Link>

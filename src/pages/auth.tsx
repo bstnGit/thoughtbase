@@ -1,9 +1,8 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
-import { ModeToggle } from "../components/ui/theme-dropdown-menu";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
-import Login from './auth/components/login';
-import Register from './auth/components/register';
+import Login from '../components/ui/auth/login';
+import Register from '../components/ui/auth/register';
 import { useRouter } from 'next/router';
 import { useSearchParams } from 'next/navigation';
 
@@ -42,7 +41,6 @@ export default function Authentication() {
         <title>{activeTab === "login" ? "Login" : "Register"}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ModeToggle />
       <main className="bg-background flex justify-center items-center min-h-screen">
         <Tabs value={activeTab}>
           <TabsList className="grid w-full grid-cols-2">
