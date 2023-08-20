@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import Nav from './nav';
 import Footer from './footer';
+import { Separator } from "../separator"
 
 interface LayoutProps {
   children: ReactNode;
@@ -8,10 +9,12 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="mt-2">
+    <div className="my-2">
       <Nav />
+      <Separator className="mt-2"/>
         <main>{children}</main>
-      <Footer />
+      <Separator className="mb-2"/>
+      <Footer/>
     </div>
   );
 };
