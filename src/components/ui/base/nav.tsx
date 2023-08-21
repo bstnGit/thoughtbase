@@ -46,7 +46,7 @@ const Nav = () => {
       </div>
       <div className="hidden md:flex justify-end mr-5">
         {renderButtons()}
-        <ThemeDropDown />
+        <ThemeDropDown className="ml-2"/>
       </div>
     </nav>
   );
