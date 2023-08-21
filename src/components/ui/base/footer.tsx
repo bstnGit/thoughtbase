@@ -1,47 +1,29 @@
 import React from 'react';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../card"
+import { Button } from "../../../components/ui/button";
+import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="text-white">
-      <div className="container mx-auto flex justify-between">
-        <div className="w-1/3 pr-8">
-          <Card>
-            <CardHeader>
-              <CardTitle>About Us</CardTitle>
-              <CardDescription>We are a dedicated blogging platform providing insightful articles on various topics.</CardDescription>
-            </CardHeader>
-          </Card>
-        </div>
-        <div className="w-1/3 pr-8">
-          <Card>
-            <CardHeader>
-              <CardTitle>Legal</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="list-disc pl-6">
-                <li><a href="/privacy-policy" className="text-white hover:underline">Privacy Policy</a></li>
-                <li><a href="/terms-of-use" className="text-white hover:underline">Terms of Use</a></li>
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-        <div className="w-1/3">
-          <Card>
-            <CardHeader>
-              <CardTitle>Contact Us</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>If you have any questions, feel free to reach out to us at <a href="mailto:contact@example.com" className="text-white underline">contact@example.com</a>.</p>
-            </CardContent>
-          </Card>
+    <footer className="text-white py-8">
+      <div className="container mx-auto">
+        <div className="w-full pr-8">
+          <h2 className="text-lg font-semibold mb-2 text-primary">
+            Legal
+          </h2>
+          <div className="flex flex-col space-y-1">
+            <Link href="/legal/privacy-policy">
+              <Button variant="link">
+                Privacy Policy
+              </Button>
+            </Link>
+
+            <Link href="/legal/terms-of-service">
+              <Button variant="link" >
+                Terms of Service
+              </Button>
+            </Link>
+
+          </div>
         </div>
       </div>
     </footer>

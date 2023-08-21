@@ -1,38 +1,52 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from 'react';
 import { Button } from "../button";
-import { Icons } from "../../icons";
-import { X, Menu } from "lucide-react"
+import { Sheet, SheetTrigger, SheetContent } from "../sheet";
+import { Menu } from "lucide-react";
+import { ThemeDropDown } from "../theme-dropdown-menu";
+import Link from "next/link";
+
+type ButtonVariant = "link" | "outline";
+
 
 const Nav = () => {
-  const [showMenu, setShowMenu] = useState(false);
+  const buttons = [
+    { label: "Home", variant: "link" as ButtonVariant, href:"" },
+    { label: "About", variant: "link" as ButtonVariant, href:""  },
+    { label: "Contact", variant: "link" as ButtonVariant, href:""  },
+    { label: "Articles", variant: "outline" as ButtonVariant, href:"/article/"  },
+  ];
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
+  const renderButtons = () => {
+    return buttons.map((button, index) => (
+      <Link href={ button.href } key={index}>
+        <Button
+          key={index}
+          variant={button.variant}
+          className={index !== buttons.length - 1 ? "mr-2" : ""} >
+          {button.label}
+        </Button>
+      </Link>
+    ));
   };
 
   return (
     <nav>
-      <div className={"relative md:hidden flex justify-end"}>
-        {showMenu && ( <div className="fixed inset-0 bg-black opacity-50" onClick={toggleMenu}></div> )}
-        <div className={`fixed inset-y-0 right-0 w-2/3 bg-background p-4 transform ${showMenu ? 'translate-x-0' : 'translate-x-full'} transition-transform ease-in-out duration-300`}>
-          <div className="flex flex-col space-y-1 items-start">
-            <Button variant="link">Home</Button>
-            <Button variant="link">About</Button>
-            <Button variant="link">Blog</Button>
-            <Button variant="outline">Contact</Button>
-          </div>
-        </div>
-        <Button size="sm" variant="link" onClick={toggleMenu} className="mr-5">
-          {showMenu ? <X/> : <Menu/>}
-        </Button>
+      <div className="relative md:hidden flex justify-end">
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button size="sm" variant="ghost" className="mr-5">
+              <Menu />
+            </Button>
+          </SheetTrigger>
+          <SheetContent className="flex flex-col items-start">
+            {renderButtons()}
+            <ThemeDropDown />
+          </SheetContent>
+        </Sheet>
       </div>
-      <div className="hidden md:flex justify-end space-x-2 mr-5">
-        <Button variant="ghost">Home</Button>
-        <Button variant="ghost">About</Button>
-        <Button variant="ghost">Contact</Button>
-        <Button variant="default">Articles</Button>
+      <div className="hidden md:flex justify-end mr-5">
+        {renderButtons()}
+        <ThemeDropDown />
       </div>
     </nav>
   );

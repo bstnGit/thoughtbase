@@ -1,7 +1,7 @@
 import { type AppType } from "next/app";
 import { api } from "../utils/api";
 import "../styles/globals.css";
-import { ThemeProvider } from "../components/ui/themeprovider";
+import { ThemeProvider } from "../components/ui/theme-provider";
 import Layout from "../components/ui/base/layout"
 import { Analytics } from '@vercel/analytics/react';
 
