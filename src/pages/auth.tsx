@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
-import Login from '../components/ui/auth/login';
-import Register from '../components/ui/auth/register';
+import Login from '../components/login';
+import Register from '../components/register';
 import { useRouter } from 'next/router';
 import { useSearchParams } from 'next/navigation';
 

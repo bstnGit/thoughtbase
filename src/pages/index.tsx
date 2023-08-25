@@ -1,17 +1,7 @@
-import { useRouter } from "next/router"
 import Head from "next/head";
 import Link from "next/link";
 import { Button } from "../components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuLabel,
-  DropdownMenuContent,
-  DropdownMenuSeparator,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "../components/ui/dropdown-menu"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/card";
-import Layout from "../components/ui/base/layout"
 
 export default function Home() {
   return (

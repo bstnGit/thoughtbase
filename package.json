@@ -9,6 +9,11 @@
     "lint": "next lint",
     "start": "next start"
   },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
   "dependencies": {
     "@prisma/client": "^5.1.1",
     "@radix-ui/react-avatar": "^1.0.3",
@@ -26,6 +31,7 @@
     "@trpc/react-query": "^10.34.0",
     "@trpc/server": "^10.34.0",
     "@vercel/analytics": "^1.0.2",
+    "@vercel/kv": "^0.2.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "i18next": "^23.4.4",

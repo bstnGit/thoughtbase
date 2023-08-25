@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "../../../components/ui/card"; // Import your card-related components and styles
-import { Button } from "../../../components/ui/button";
-import { Icons } from "../../../components/icons"
-import { Separator } from "../../../components/ui/separator"
-import { Input } from "../../../components/ui/input";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./ui/card";
+import { Button } from "./ui/button"
+import { Icons } from "./ui/icons"
+import { Separator } from "./ui/separator"
+import { Input } from "./ui/input";
 
 const RegisterComponent = () => {
   return (

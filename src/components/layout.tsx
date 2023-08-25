@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import Nav from './nav';
 import Footer from './footer';
-import { Separator } from "../separator"
+import { Separator } from "./ui/separator"
 
 interface LayoutProps {
   children: ReactNode;

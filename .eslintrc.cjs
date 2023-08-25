@@ -2,13 +2,23 @@
 const config = {
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: true,
+    project: "./tsconfig.json",
+    ecmaVersion: 2015,
   },
   plugins: ["@typescript-eslint"],
   extends: [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
+  ],
+  overrides: [
+    {
+      files: ["*.js"],
+      parser: "espree",
+      parserOptions: {
+        ecmaVersion: 2015, // Add this line here as well
+      },
+    },
   ],
   rules: {
     // These opinionated rules are enabled in stylistic-type-checked above.
