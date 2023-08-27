@@ -1,23 +1,24 @@
 import React from 'react';
-import Buttons, { ButtonProps, ButtonVariant } from "./ui/button-group";
+import ButtonGroup from "./ui/button-group";
+import type { ButtonGroupProps, ButtonVariant } from "./ui/button-group";
 import { Button } from "./ui/button"
 import Link from "next/link";
 import Logo from "./ui/logo"
 import { Input } from "./ui/input"
 
-const section_1: ButtonProps[] = [
+const section_1: ButtonGroupProps[] = [
   { label: "Announcements", variant: "link" as ButtonVariant, href: "/" },
   { label: "Github", variant: "link" as ButtonVariant, href: "/" },
   { label: "Twitter", variant: "link" as ButtonVariant, href: "/" },
 ];
 
-const section_2: ButtonProps[] = [
+const section_2: ButtonGroupProps[] = [
   { label: "Contribute", variant: "link" as ButtonVariant, href: "/" },
   { label: "Request feature", variant: "link" as ButtonVariant, href: "/" },
   { label: "Report bug", variant: "link" as ButtonVariant, href: "/" },
 ];
 
-const section_3: ButtonProps[] = [
+const section_3: ButtonGroupProps[] = [
   { label: "Privacy Policy", variant: "link" as ButtonVariant, href: "/" },
   { label: "Terms of Service", variant: "link" as ButtonVariant, href: "/" },
 ];
@@ -45,7 +46,7 @@ const Footer = () => {
         <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/6 xl:w-1/6 p-3">
           <p className="text-sm text-primary">About Eclectic Musings</p>
           <div className="flex flex-col mt-1">
-            <Buttons buttons={section_1} />
+            <ButtonGroup buttons={section_1} />
           </div>
         </div>
 
@@ -53,7 +54,7 @@ const Footer = () => {
         <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/6 xl:w-1/6 p-3">
           <p className="text-sm text-primary">Involvement</p>
           <div className="flex flex-col mt-1">
-            <Buttons buttons={section_2} />
+            <ButtonGroup buttons={section_2} />
           </div>
         </div>
 
@@ -61,7 +62,7 @@ const Footer = () => {
         <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/6 xl:w-1/6 p-3">
           <p className="text-sm text-primary">Legal</p>
           <div className="flex flex-col mt-1">
-            <Buttons buttons={section_3} />
+            <ButtonGroup buttons={section_3} />
           </div>
         </div>
 
