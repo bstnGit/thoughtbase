@@ -2,13 +2,13 @@ import Link from 'next/link';
 import { Button } from './button';
 export type ButtonVariant = "link" | "outline" | "default";
 
-export interface ButtonProps {
+export interface ButtonGroupProps {
   href: string;
   variant: ButtonVariant;
   label: string;
 }
 
-const Buttons: React.FC<{ buttons: ButtonProps[] }> = ({ buttons }) => {
+const ButtonGroup: React.FC<{ buttons: ButtonGroupProps[] }> = ({ buttons }) => {
   return (
     <>
       {buttons.map((button, index) => (
@@ -29,4 +29,4 @@ const Buttons: React.FC<{ buttons: ButtonProps[] }> = ({ buttons }) => {
   );
 };
 
-export default Buttons;
+export default ButtonGroup;

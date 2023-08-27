@@ -1,5 +1,5 @@
 import React from 'react';
-import Buttons, { ButtonProps, ButtonVariant } from "./ui/buttons";
+import Buttons, { ButtonProps, ButtonVariant } from "./ui/button-group";
 import { Button } from "./ui/button"
 import Link from "next/link";
 import Logo from "./ui/logo"
@@ -42,7 +42,7 @@ const Footer = () => {
 
 
         {/* About */}
-        <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/6 xl:w-1/6 p-3 hover:bg-green-500">
+        <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/6 xl:w-1/6 p-3">
           <p className="text-sm text-primary">About Eclectic Musings</p>
           <div className="flex flex-col mt-1">
             <Buttons buttons={section_1} />
@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
 
         {/* Involvement */}
-        <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/6 xl:w-1/6 p-3 hover:bg-red-500">
+        <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/6 xl:w-1/6 p-3">
           <p className="text-sm text-primary">Involvement</p>
           <div className="flex flex-col mt-1">
             <Buttons buttons={section_2} />
@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
 
         {/* Legal */}
-        <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/6 xl:w-1/6 p-3 hover:bg-yellow-500">
+        <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/6 xl:w-1/6 p-3">
           <p className="text-sm text-primary">Legal</p>
           <div className="flex flex-col mt-1">
             <Buttons buttons={section_3} />
@@ -66,9 +66,9 @@ const Footer = () => {
         </div>
 
         {/* Newsletter */}
-        <div className="w-full sm:w-full md:w-full lg:w-1/6 xl:w-1/6 p-3 min-w-[300px] hover:bg-blue-500">
+        <div className="w-full sm:w-full md:w-full lg:w-1/6 xl:w-1/6 p-3 min-w-[300px]">
           <p className="text-sm text-primary">Subscribe to our newsletter</p>
-          <div className="flex flex-col max-w-[300px]">
+          <div className="flex flex-col">
             <p className="mt-2 font-thin text-secondary">Stay updated on new releases and features, guides, and case studies.</p>
             <div className="flex mt-2">
               <Input className="mr-2" type="email" placeholder="email@domain.com" />
