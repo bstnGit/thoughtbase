@@ -2,80 +2,201 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    :root {
-      --background: 0 0% 100%;
-      --secondary-background: 210 40% 98%;
-      --foreground: 222.2 47.4% 11.2%;
-      --card: 0 0% 100%;
-      --card-foreground: 240 10% 3.9%;
-      --popover: 0 0% 100%;
-      --popover-foreground: 240 10% 3.9%;
-      --primary: 240 5.9% 10%;
-      --primary-foreground: 0 0% 98%;
-      --secondary: 215 16% 47%;
-      --secondary-foreground: 240 5.9% 10%;
-      --muted: 240 4.8% 95.9%;
-      --muted-foreground: 240 3.8% 46.1%;
-      --accent: 240 4.8% 95.9%;
-      --accent-foreground: 240 5.9% 10%;
-      --destructive: 0 84.2% 60.2%;
-      --destructive-foreground: 0 0% 98%;
-      --border: 240 5.9% 90%;
-      --input: 240 5.9% 90%;
-      --ring: 240 5% 64.9%;
-      --radius: 0.5rem;
-    }
+/* Semibold */
+@font-face {
+  font-family: "Custom";
+  src: url("/fonts/SemiBold.ttf") format("ttf"),
+    url("/fonts/SemiBold.woff") format("woff"),
+    url("/fonts/SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
 
-    .dark {
-      --background: 240 10% 3.9%;
-      --secondary-background: 0 0% 6%;
-      --foreground: 213 31% 91%;
-      --card: 240 10% 3.9%;
-      --card-foreground: 0 0% 98%;
-      --popover: 240 10% 3.9%;
-      --popover-foreground: 0 0% 98%;
-      --primary: 0 0% 98%;
-      --primary-foreground: 240 5.9% 10%;
-      --secondary: 216 6% 76%;
-      --secondary-foreground: 0 0% 40%;
-      --muted: 240 3.7% 15.9%;
-      --muted-foreground: 240 5% 64.9%;
-      --accent: 240 3.7% 15.9%;
-      --accent-foreground: 0 0% 98%;
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 0 85.7% 97.3%;
-      --border: 240 3.7% 15.9%;
-      --input: 240 3.7% 15.9%;
-      --ring: 240 4.9% 83.9%;
-    }
+/* Bold */
+@font-face {
+  font-family: "Custom";
+  src: url("/fonts/Bold.ttf") format("ttf");
+
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Regular */
+@font-face {
+  font-family: "Custom";
+  src: url("/fonts/Regular.ttf") format("ttf");
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --background-secondary: 210 40% 98%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 215 16% 47%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
   }
 
-h1{
-  font-size: 32px;
+  .dark {
+    --background: 224 71% 4%;
+    --background-secondary: 222.2 47.4% 6%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 215 20% 65%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
 }
 
-h2{
-  font-size: 24px;
+h1 {
+  font-family: "Custom", sans-serif;
+  font-weight: 600;
+  font-size: 3.5rem;
+  line-height: 0.9em;
 }
 
-h3{
-  font-size: 18px;
+h2 {
+  font-family: "Custom", sans-serif;
+  font-weight: 600;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
-p{
-  font-size: 14px;
+h3 {
+  font-family: "Custom", sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
+
+h4 {
+  font-family: "Custom", sans-serif;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: hsl(var(--secondary));
+}
+
+h5 {
+  font-family: "Custom", sans-serif;
+  font-weight: normal;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: hsl(var(--primary));
+}
+
+p {
+  font-family: "Custom", Helvetica, Arial, sans-serif; /* Custom font, Helvetica, Arial, generic sans-serif */  font-weight: normal;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color:var(--secondary);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+strong {
+  font-family: "Custom", sans-serif;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4.5rem;
+    line-height: 1em;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  h4 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 5.5rem /* 72px */;
+    line-height: 1em;
+  }
+
+  h2 {
+    font-size: 3.5rem /* 48px */;
+    line-height: 1;
+  }
+
+  h3 {
+    font-size: 1.5rem /* 24px */;
+    line-height: 1; /* 32px */
+  }
+}
+
+/* TODO: REMOVE this is most likely not needed */
 
 .link {
   font-size: 14px;
 }
 
-.link:hover{
+.link:hover {
   text-decoration: underline;
 }
 
-.description{
+.description {
   font-size: 12px;
 }
 
@@ -95,7 +216,7 @@ p{
   }
 
   .step:before {
-    @apply absolute w-9 h-9 bg-muted rounded-full font-mono font-medium text-center text-base inline-flex items-center justify-center -indent-px border-4 border-background;
+    @apply absolute inline-flex h-9 w-9 items-center justify-center rounded-full border-4 border-background bg-muted text-center -indent-px font-mono text-base font-medium;
     @apply ml-[-50px] mt-[-4px];
     content: counter(step);
   }

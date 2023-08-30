@@ -1,9 +1,19 @@
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "../components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/card";
-import { AreaOfInterest, AreaOfInterestHeader, AreaOfInterestDescription } from '../components/area-of-interest';
+import {
+  AreaOfInterest,
+  AreaOfInterestHeader,
+  AreaOfInterestDescription,
+} from "../components/area-of-interest";
+import Image from "next/image";
+
+function scrollToTarget() {
+  const targetDiv = document.getElementById("featured");
+  if (targetDiv) {
+    targetDiv.scrollIntoView({ behavior: "smooth" });
+  }
+}
 
 export default function Home() {
   return (
@@ -14,42 +24,120 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="bg-background flex justify-center items-center min-h-screen">
+      {/* Welcome */}
+      <div className="flex min-h-screen items-center justify-center bg-background">
         <div className="flex flex-col items-center">
           <Button variant="subtl">Follow along on Twitter</Button>
-          <p className="mt-5 font-bold text-4xl md:text-5xl lg:text-7xl max-w-[400px] md:max-w-[550px] lg:max-w-[800px] text-center">
+          <h1 className="mt-5 max-w-[400px] text-center md:max-w-[550px] lg:max-w-[800px]">
             The enriching journey of wisdom
-          </p>
-          <p className="mt-3 text-sm md:text-base max-w-[300px] text-center">Informative Articles Exploring the Realms of Cognitive Science, Computer Science, and Thought-Provoking Musings</p>
+          </h1>
+          <h4 className="mt-3 max-w-[525px] text-center">
+            Informative Articles Exploring the Realms of Cognitive Science,
+            Computer Science, and Thought-Provoking Musings
+          </h4>
 
           <div className="mt-5 flex">
-            <Button>Explore Article</Button>
-            <Button className="ml-2" variant="outline">Featured Article</Button>
+            <Button onClick={ scrollToTarget }>Featured Article</Button>
+            <Button className="ml-2" variant="outline">
+              Featured Article
+            </Button>
           </div>
         </div>
       </div>
-      <div className="bg-background-secondary h-fit py-10">
+
+      {/* Areas of interest 
+      <div className="h-fit bg-background-secondary py-36">
         <div className="flex flex-col items-center">
-          <p className="mt-10 font-bold text-3xl md:text-4xl lg:text-5xl text-primary">Areas of interest</p>
+          <p className="mt-10 text-3xl font-bold text-primary md:text-4xl lg:text-5xl">
+            Areas of interest
+          </p>
         </div>
 
-        <div className="flex justify-center mt-5 mx-10 space-x-2">
-            <AreaOfInterest fileName="illustration-computer-science.svg">
-                  <AreaOfInterestHeader>Computer Science</AreaOfInterestHeader>
-                  <AreaOfInterestDescription>Delving into the syntax of logic and algorithms, computer science employs the language of patterns and relationships to address challenges and comprehend the digital realm.</AreaOfInterestDescription>
-              </AreaOfInterest>
+        <div className="mx-10 mt-5 flex items-stretch justify-center space-x-2">
+          <AreaOfInterest fileName="svg/illustration-computer-science.svg">
+            <AreaOfInterestHeader>Computer Science</AreaOfInterestHeader>
+            <AreaOfInterestDescription>
+              Delving into the syntax of logic and algorithms, computer science
+              employs the language of patterns and relationships to address
+              challenges and comprehend the digital realm.
+            </AreaOfInterestDescription>
+          </AreaOfInterest>
 
-            <AreaOfInterest fileName="illustration-mathematics.svg">
-                  <AreaOfInterestHeader>Mathematics</AreaOfInterestHeader>
-                  <AreaOfInterestDescription>Exploring the language of patterns and relationships, mathematics is used to solve problems and understand the world. </AreaOfInterestDescription>
-              </AreaOfInterest>
+          <AreaOfInterest fileName="svg/illustration-mathematics.svg">
+            <AreaOfInterestHeader>Mathematics</AreaOfInterestHeader>
+            <AreaOfInterestDescription>
+              Exploring the language of patterns and relationships, mathematics
+              is used to solve problems and understand the world.{" "}
+            </AreaOfInterestDescription>
+          </AreaOfInterest>
 
-              <AreaOfInterest fileName="illustration-cognitive-science.svg">
-                  <AreaOfInterestHeader>Cognitive Science</AreaOfInterestHeader>
-                  <AreaOfInterestDescription>The interdisciplinary study of how the mind works, encompassing psychology, neuroscience, linguistics, philosophy, and computer science.</AreaOfInterestDescription>
-              </AreaOfInterest>
+          <AreaOfInterest fileName="svg/illustration-cognitive-science.svg">
+            <AreaOfInterestHeader>Cognitive Science</AreaOfInterestHeader>
+            <AreaOfInterestDescription>
+              The interdisciplinary study of how the mind works, encompassing
+              psychology, neuroscience, linguistics, philosophy, and computer
+              science.
+            </AreaOfInterestDescription>
+          </AreaOfInterest>
+
+          <AreaOfInterest fileName="svg/illustration-cognitive-science.svg">
+            <AreaOfInterestHeader>Electrical engineering</AreaOfInterestHeader>
+            <AreaOfInterestDescription>
+              The study and application of electronics, electromagnetism, and
+              electrical systems to design, develop, and optimize various
+              technologies and devices.
+            </AreaOfInterestDescription>
+          </AreaOfInterest>
         </div>
+      </div>
+      */}
 
+      {/* Featured */}
+      <div id="featured" className="bg-background-secondary min-h-screen flex justify-center items-center">
+        <div className="mx-10 flex flex-col items-center md:flex-row md:justify-center">
+          <div className="min-w-[375px] max-w-[525px] md:min-w-[450px]">
+            <Image
+              src="/cover-atomic-habits.png"
+              width="550"
+              height="100"
+              alt=""
+              layout="responsive"
+            />
+          </div>
+          <div>
+            <h2 className="mt-16">Atomic Habits</h2>
+            <h4 className="mt-3 max-w-[550px]">
+              <strong>TLDR;</strong> A guide to making small, consistent changes
+              that compound over time for significant personal growth. The
+              book&#39;s four-step framework helps reshape behavior and
+              emphasizes tracking progress and focusing on small improvements.
+            </h4>
+
+            <div className="mt-10 flex space-x-2">
+              <Button>Read Article</Button>
+              <Button variant="outline">Purchase Book</Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Open source */}
+      <div className="flex justify-center bg-background py-56">
+        <div className="mx-10 flex flex-col items-center">
+          <h1 className="text-center">Proudly Open Source</h1>
+          <h4 className="mt-5 max-w-[575px] text-center text-lg">
+            Eclectic Musings is open source and powered by open source software.
+            The code is available on{" "}
+            <Link
+              href="https://github.com/bstnGit/thoughtbase"
+              className="underline"
+              target="_blank"
+            >
+              GitHub
+            </Link>
+            .
+          </h4>
+        </div>
       </div>
     </>
   );

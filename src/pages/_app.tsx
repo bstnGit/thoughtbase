@@ -4,16 +4,20 @@ import "../styles/globals.css";
 import { ThemeProvider } from "../components/ui/theme-provider";
 import Layout from "../components/layout"
 import { Analytics } from '@vercel/analytics/react';
-import { Inter } from 'next/font/google'
+import Head from "next/head";
 
-const inter = Inter({ subsets: ['latin'] })
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <Layout>
             <Analytics />
-            <main className={ inter.className }>
+
+            <Head>
+              <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            </Head>
+
+            <main>
               <Component {...pageProps} />
             </main>
       </Layout>

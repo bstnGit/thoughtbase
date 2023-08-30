@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent } from "./ui/card";
-import ThemedImage from './ui/themed-image';
+import Image from 'next/image';
+
 
 interface AreaOfInterestProp {
   fileName: string;
@@ -9,17 +10,20 @@ interface AreaOfInterestProp {
   children?: React.ReactNode;
 }
 
+// TODO: Make dark theme possible
 const AreaOfInterest: React.FC<AreaOfInterestProp> = ({ fileName, className, children }) => {
   return (
-    <div className={`flex flex-col max-w-[450px] flex-shrink-0 w-1/2 sm:w-1/3 ${className}`}>
-      <Card className="w-full px-10">
+    <div className={`flex flex-col max-w-[450px] w-1/2 sm:w-1/3 ${className}`}>
+      <Card className="w-full bg-white min-w-[250px] justify-items-center">
         <CardContent>
-          <ThemedImage
-            fileName={ fileName }
-            width={300}
-            height={300}
-            alt=""
-          />
+          <div className="min-w-[200px] flex justify-center">
+            <Image
+              src={ fileName }
+              width={280}
+              height={280}
+              alt=""
+            />
+          </div>
         </CardContent>
       </Card>
       { children }
@@ -33,9 +37,9 @@ interface AreaOfInterestHeaderProps {
 }
 
 const AreaOfInterestHeader: React.FC<AreaOfInterestHeaderProps> = ({ className, children }) => (
-  <div className={cn('mt-2 font-bold text-1xl lg:text-2xl text-primary', className)}>
+  <h3 className={cn('mt-4', className)}>
     {children}
-  </div>
+  </h3>
 );
 
 interface AreaOfInterestDescriptionProps {
