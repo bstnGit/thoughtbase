@@ -95,7 +95,7 @@ export default function Home() {
       {/* Featured */}
       <div id="featured" className="bg-background-secondary min-h-screen flex justify-center items-center">
         <div className="mx-10 flex flex-col items-center md:flex-row md:justify-center">
-          <div className="min-w-[375px] max-w-[525px] md:min-w-[450px]">
+          <div className="min-w-[375px] max-w-[525px] md:min-w-[450px] mr-5">
             <Image
               src="/covers/atomic-habits.png"
               width="550"
